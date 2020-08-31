@@ -70,19 +70,8 @@ function init() {
     tl.fromTo(currentLeft, 0.3, { y: "-10%" }, { y: "-100%" })
       .fromTo(currentRight, 0.3, { y: "10%" }, { y: "-100%" }, "-=0.2")
       .to(portofolio, 0.3, { backgroundImage: backgrounds[pageNumber] })
-      .fromTo(
-        currentPage,
-        0.3,
-        { opacity: 1, pointerEvents: "all" },
-        { opacity: 0, pointerEvents: "none" }
-      )
-      .fromTo(
-        nextPage,
-        0.3,
-        { opacity: 0, pointerEvents: "none" },
-        { opacity: 1, pointerEvents: "all" },
-        "-=0.6"
-      )
+      .fromTo(currentPage,0.3,{ opacity: 1, pointerEvents: "all" },{ opacity: 0, pointerEvents: "none" })
+      .fromTo(nextPage,0.3,{ opacity: 0, pointerEvents: "none" },{ opacity: 1, pointerEvents: "all" },"-=0.6")
       .fromTo(nextLeft, 0.3, { y: "-100%" }, { y: "-10%" }, "-=0.6")
       .fromTo(nextRight, 0.3, { y: "-100%" }, { y: "10%" }, "-=0.8")
       .fromTo(nextText, 0.3, { opacity: 0, y: 0 }, { opacity: 1, y: 0 })
@@ -121,30 +110,30 @@ function init() {
     nextSlide(scrollSlide);
   }
 
-  // const hamburger = document.querySelector(".menu");
-  // const hamburgerLines = document.querySelectorAll(".menu line");
-  // const navOpen = document.querySelector(".nav-open");
-  // const contact = document.querySelector(".contact");
-  // const social = document.querySelector(".social");
-  // const logo = document.querySelector(".logo");
+  const hamburger = document.querySelector(".menu");
+  const hamburgerLines = document.querySelectorAll(".menu line");
+  const navOpen = document.querySelector(".nav-open");
+  const contact = document.querySelector(".contact");
+  const social = document.querySelector(".social");
+  const logo = document.querySelector(".logo");
 
-  // const tl = new TimelineMax({ paused: true, reversed: true });
+  const tl = new TimelineMax({ paused: true, reversed: true });
 
-  // tl.to(navOpen, 0.5, { y: 0 })
-  //   .fromTo(contact, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.1")
-  //   .fromTo(social, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.5")
-  //   .fromTo(logo, 0.2, { color: "white" }, { color: "black" }, "-=1")
-  //   .fromTo(
-  //     hamburgerLines,
-  //     0.2,
-  //     { stroke: "white" },
-  //     { stroke: "black" },
-  //     "-=1"
-  //   );
+  tl.to(navOpen, 0.5, { y: 0 })
+    .fromTo(contact, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.1")
+    .fromTo(social, 0.5, { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.5")
+    .fromTo(logo, 0.2, { color: "white" }, { color: "black" }, "-=1")
+    .fromTo(
+      hamburgerLines,
+      0.2,
+      { stroke: "white" },
+      { stroke: "black" },
+      "-=1"
+    );
 
-  // hamburger.addEventListener("click", () => {
-  //   tl.reversed() ? tl.play() : tl.reverse();
-  // });
+  hamburger.addEventListener("click", () => {
+    tl.reversed() ? tl.play() : tl.reverse();
+  });
 }
 
 function throttle(func, limit) {

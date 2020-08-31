@@ -243,14 +243,19 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+  html, body {
+    overflow: hidden;
+  }
+
   .hero img {
-    height: 400px;
+    height: 300px;
   }
   .details h1 {
-    font-size: 38px;
+    font-size: 30px;
   }
   .details h2 {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 
